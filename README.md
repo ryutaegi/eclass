@@ -1,6 +1,5 @@
 # eclass - 유태기
 2022-10-26 18:00 1차 배포
-
 2022-10-26 18:40 1차 수정
 
 <주의 사항>
@@ -12,6 +11,7 @@
 3. 크롬 버전이 106.XXX가 아니면 업데이트를 한다. 업데이트 후에도 106.XXX가 아니라면 아래의 링크에 접속에 알맞은 chromedriver를 설치한다.(참고 링크 확인 요망)
   https://chromedriver.chromium.org/downloads
 4. cmd창을 열고 selelium 3.141버전과 beautifulsoup, requests를 설치한다.
+
   python -m pip3 install selenium==3.141
   
   python -m pip install beautifulsoup4 
@@ -32,3 +32,6 @@
   beautifulsoup 설치
   
   하다가 진 ~~~~~~~~~~~~ 짜 모르겠는 건 물어보셔
+  
+  
+  풀&리퀘스트 환영
