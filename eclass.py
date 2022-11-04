@@ -84,14 +84,15 @@ while True:
 		timef2 = timef0[0].split(":")
 		timef3 = timef0[1].split(":")
 		print("현재/목표시간", timef0[0].strip(), timef0[1].strip()) 
-		if(int(timef3[0].strip())-int(timef2[0].strip())>0):
-			lisnum = j
-			listime = int(timef3[0].strip())-int(timef2[0].strip()) + 3
-			lisname = name1
-			print(lisname, "강의 접속")
-			print(listime, "분을 수강할 예정")
-			print("수강 필요 강의 중 ",j+1,"번 강의 접속")
-			break
+		if(len(timef2) == 2):
+			if((int(timef3[0].strip())-int(timef2[0].strip())>0) or int(timef3[0].strip())==0):
+				lisnum = j
+				listime = int(timef3[0].strip())-int(timef2[0].strip()) + 3
+				lisname = name1
+				print(lisname, "강의 접속")
+				print(listime, "분을 수강할 예정")
+				print("수강 필요 강의 중 ",j+1,"번 강의 접속")
+				break
 
 
 
