@@ -44,7 +44,7 @@ while True:
 		print(day[:4])
 		title1 = title.strip()
 		if title1[:7]=='[온라인강의]':
-			if day[:5]=='D-Day':
+			#if day[:5]=='D-Day':
 				print(day[:5], "수강할 강의 +1")
 				num1+=1
 				num.append(i) #0부터 시작
@@ -73,18 +73,20 @@ while True:
 	lisnum = 0
 	listime = -1
 	lisname = ""
+	perdiv = soup.select("div.lecture-box > div > ul > li:nth-child(1) > ol > li:nth-child(5) > div > div > div:nth-child(2) > div:nth-child(2)")
 	timediv = soup.select("div.lecture-box > div > ul > li:nth-child(1) > ol > li:nth-child(5) > div > div > div:nth-child(2) > div:nth-child(3)")
 	namediv = soup.select("div.lecture-box > div > ul > li:nth-child(1) > ol > li:nth-child(5) > div > div > div:nth-child(1) > div > span")
 
 	for j in range(len(timediv)):
 		time1=timediv[j].text
+		perdiv1=perdiv[j].text
 		name1=namediv[j].text
 		#timef1 = time1.split(":")
 		timef0 = time1.split('/')
 		timef2 = timef0[0].split(":")
 		timef3 = timef0[1].split(":")
 		print("현재/목표시간", timef0[0].strip(), timef0[1].strip()) 
-		if(len(timef2) == 2):
+		if(perdiv1!='100%'):
 			if((int(timef3[0].strip())-int(timef2[0].strip())>0) or int(timef3[0].strip())==0):
 				lisnum = j
 				listime = int(timef3[0].strip())-int(timef2[0].strip()) + 3
